@@ -75,7 +75,7 @@ def checkout(cart, coupons)
   
   cart1.each do |item, item_info|
     coupons.each do |element|
-      if item_info[:count] > element[:num]
+     unless item_info[:count] < element[:num]
         cart2 = apply_coupons(cart1, coupons)
       end
     end 
