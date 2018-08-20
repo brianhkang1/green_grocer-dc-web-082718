@@ -38,10 +38,14 @@ def apply_coupons(cart, coupons)
           new_hash["#{item} W/COUPON"] = {}
           new_hash["#{item} W/COUPON"][:price] = element[:cost]
           new_hash["#{item} W/COUPON"][:clearance] = cart[item][:clearance]
-          new_hash["#{item} W/COUPON"][:count] = 1
+          new_hash["#{item} W/COUPON"][:count] = 0
           new_hash[item][:count] -= element[:num]
         end
+      end
+    end 
           
+    coupons.each do |element|
+      
         if element.has_value?(item)
           new_hash["#{item} W/COUPON"][:count] += 1
         end 
