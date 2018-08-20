@@ -69,6 +69,7 @@ end
 
 def checkout(cart, coupons)
   sum = 0
+  cart 2 = {}
   cart1 = consolidate_cart(cart)
   
   cart1.each do |item, item_info|
