@@ -43,9 +43,9 @@ def apply_coupons(cart, coupons)
         end
       end
     end 
-          
-    coupons.each do |element|
       
+    cart.each do |item, item_info|      
+      coupons.each do |element|
         if element.has_value?(item)
           new_hash["#{item} W/COUPON"][:count] += 1
         end 
