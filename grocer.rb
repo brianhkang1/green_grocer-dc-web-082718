@@ -41,7 +41,7 @@ def apply_coupons(cart, coupons)
           new_hash[item][:count] -= element[:num]
         end
           
-        if new_hash["#{item} W/COUPON"].has_key?(:count)
+        if new_hash[item].has_key?(:count)
           new_hash["#{item} W/COUPON"][:count] += 1
         else 
           new_hash["#{item} W/COUPON"][:count] = 1
