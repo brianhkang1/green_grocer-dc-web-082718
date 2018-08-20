@@ -69,18 +69,9 @@ end
 
 def checkout(cart, coupons)
   sum = 0
-  cart2 = {}
   
   cart1 = consolidate_cart(cart)
-  
-  cart1.each do |item, item_info|
-    coupons.each do |element|
-     unless item_info[:count] < element[:num]
-        cart2 = apply_coupons(cart1, coupons)
-      end
-    end 
-  end 
-  
+  cart2 = apply_coupons(cart1, coupons)
   cart3 = apply_clearance(cart2)
   
   cart3.each do |item, item_info|
